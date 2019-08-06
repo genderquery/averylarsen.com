@@ -24,7 +24,7 @@
   <% } %>
 <% } %>
 <% if (page.total > 1){ %>
-  <nav id="page-nav">
+  <nav id="page-nav" aria-label="Pagination">
     <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;"%>
     <%- paginator({
       prev_text: prev_text,

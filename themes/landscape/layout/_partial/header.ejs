@@ -12,13 +12,13 @@
       <% } %>
     </div>
     <div id="header-inner" class="inner">
-      <nav id="main-nav">
+      <nav id="main-nav" aria-label="Main">
         <a id="main-nav-toggle" class="nav-icon"></a>
         <% for (var i in theme.menu){ %>
           <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
         <% } %>
       </nav>
-      <nav id="sub-nav">
+      <nav id="sub-nav" aria-label="Extra">
         <% if (theme.rss){ %>
           <a id="nav-rss-link" class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"></a>
         <% } %>
