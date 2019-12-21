@@ -27,7 +27,7 @@ The pairing keys in Windows 10 are stored in the registry at `HKEY_LOCAL_MACHINE
 4. Launch the Registry Editor as the SYSTEM account by using PsExec.
 
 ```
-> psexec -s -i regedit
+> psexec64 -s -i regedit
 ```
 
 5. Navigate to the branch `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys\`.
@@ -39,12 +39,12 @@ The pairing keys in Windows 10 are stored in the registry at `HKEY_LOCAL_MACHINE
 "28c13c548dc2"=hex:05,0f,65,62,09,dd,d3,5c,0f,78,20,09,8a,41,a5,2e
 "34885dae8022"=hex:36,85,a7,90,32,1d,ba,11,70,df,89,81,43,29,b8,3c
 ```
-7. Export the Keys branch by right-clicking and selecting *Export*. Save it somewhere you'll be able to access from Linux.
+7. Export the Keys branch by right-clicking and selecting *Export*. Save it somewhere you'll be able it access from Linux.
 
 
 ## Updating the keys in Linux
 
-Now that we have our pairing keys, we can boot back into Linux and change the keys. This process will be a lot easier. Go ahead and pair your devices the way you normally would, if you haven't already. This will create the config files we'll need to edit. Those files, however, can only be accessed by root, so we'll need a root shell.
+Now that we have our pairing keys, we can boot back into Linux and change the keys. Go ahead and pair your devices the way you normally would, if you haven't already. This will create the config files we'll need to edit. Those files, however, can only be accessed by root, so we'll need a root shell.
 
 1. Get a root shell.
 
@@ -114,10 +114,17 @@ Version=4611
 # systemctl restart bluetooth
 ```
 
+## Acknowledgments
+
+Thank you to [Richard Vigars][richardvigars] for writing an article that got me started on figuring this out.
+
+Thank you to user [thezeroth][thezeroth] on Super User for providing an answer on how to access the pairing keys in the Registry.
+
 
 [pstools]: https://docs.microsoft.com/en-us/sysinternals/downloads/psexec "PsExec - Windows Sysinternals | Microsoft Docs"
 
+[richardvigars]: https://medium.com/@richardvigars/where-to-find-bluetooth-link-keys-in-the-windows-registry-for-the-ekobuy-usb-dongle-csr-harmony-b7777c90b41 "Finding Bluetooth link key in Windows 7, to double pair a device on dualboot computer - Super User"
+
 [thezeroth]: https://superuser.com/questions/229930/finding-bluetooth-link-key-in-windows-7-to-double-pair-a-device-on-dualboot-com/835710#835710 "Where to find Bluetooth link keys in the Windows registry for the EkoBuy USB dongle / CSR Harmony stack"
 
-[richardvigars]: https://medium.com/@richardvigars/where-to-find-bluetooth-link-keys-in-the-windows-registry-for-the-ekobuy-usb-dongle-csr-harmony-b7777c90b41 "Finding Bluetooth link key in Windows 7, to double pair a device on dualboot computer - Super User"
 
