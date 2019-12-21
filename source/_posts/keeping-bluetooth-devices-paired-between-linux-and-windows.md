@@ -9,6 +9,7 @@ date: 2019-12-20
 
 When booting between Debian and Windows on my laptop, I used to have to re-pair my Bluetooth devices each time. In this guide, I'll show how I copied the pairing keys from Windows and used them in Debian so everything stays paired between reboots.
 
+<!--more-->
 
 ## Getting the keys out of Windows
 
