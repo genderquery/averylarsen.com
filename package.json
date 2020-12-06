@@ -1,0 +1,14 @@
+{
+  "name": "averylarsen.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
