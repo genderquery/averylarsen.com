@@ -1,7 +1,8 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
+# Node dependencies 
+node_modules
+
+# Local Netlify folder
+.netlify
+
+# Eleventy output
+_site

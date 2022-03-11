@@ -1,0 +1,3 @@
+[build]
+command = "DEBUG=* eleventy"
+publish = "_site"

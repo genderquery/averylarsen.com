@@ -1,0 +1,16 @@
+body {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+  background-color: #ffe;
+  color: #111;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+pre {
+  overflow-x: auto;
+  border: 1px solid;
+  padding: 0.25em 0.5em;
+  background-color: #eef;
+}
