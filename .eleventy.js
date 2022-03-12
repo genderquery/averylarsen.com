@@ -1,4 +1,6 @@
-module.exports = function (eleventyConfig) {    
+module.exports = function (eleventyConfig) {
+    eleventyConfig.ignores.add("README.md");
+    
     eleventyConfig.addPassthroughCopy("css");
 
     // Copy _redirects to site folder so Netlify can see it
