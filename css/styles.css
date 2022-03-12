@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   max-width: 40rem;
+  overflow-wrap: break-word;
   padding: 1rem;
   background-color: #ffe;
   color: #111;
