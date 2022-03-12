@@ -7,7 +7,6 @@ tags:
 date: 2019-08-06 14:25:07
 ---
 
-
 I recently loaded the setup defaults on my ThinkPad after trying to diagnose a
 boot problem and this cleared the UEFI boot entries leaving me unable to boot
 my installed OS. In this article, I'll show you how to recreate a new boot
@@ -64,8 +63,8 @@ root@amnesia:~# find /mnt
 ```
 
 Now that you've identified the correct disk, use `efibootmgr` to create a new
-entry. `--disk` is the disk of the system partition, *not* the partition
-itself! `--part` is the partition number, *starting at 1*. `--loader` is the
+entry. `--disk` is the disk of the system partition, _not_ the partition
+itself! `--part` is the partition number, _starting at 1_. `--loader` is the
 path to the UEFI binary. You will need to use `shimx64.efi` instead of
 `grubx64.efi` if you're using [SecureBoot][secureboot]. You must use
 backslashes as the path separator.
@@ -85,7 +84,6 @@ Boot0012* Debian	HD(1,GPT,3b9ed62c-c28d-4866-842e-29c9bc7b0ac7,0x800,0x100000)/F
 Assuming everything went OK, `efibootmgr` will list all the entries (which I
 trimmed here) and your new one should be at the bottom. Confirm everything
 looks correct and reboot. Fingers crossed!
-
 
 [rescue]: https://www.debian.org/releases/stable/amd64/ch08s06.en.html
 [live]: https://www.debian.org/CD/live/

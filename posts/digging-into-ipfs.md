@@ -5,7 +5,6 @@ tags:
 date: 2019-08-15 18:07:19
 ---
 
-
 I've been playing around with [IPFS (the InterPlanetary File System)][ipfs]
 which describes itself as "[a] peer-to-peer hypermedia protocol to make the
 web faster, safer, and more open." I had some questions that weren't easily
@@ -28,8 +27,6 @@ to follow along with the commands, you'll need the following packages:
 [openssl]: https://packages.debian.org/stable/openssl "Debian -- Details of package openssl in buster"
 [protobuf-compiler]: https://packages.debian.org/buster/protobuf-compiler "Debian -- Details of package protobuf-compiler in buster"
 [jq]: https://packages.debian.org/buster/jq "Debian -- Details of package jq in buster"
-
-
 
 ## Getting Started
 
@@ -65,11 +62,11 @@ to get started, enter:
 A <dfn>node</dfn> is a network-addressable server that will talk to other
 nodes, called <dfn>peers</dfn>, in the network to handle requests for data.
 
-Before we can access the IPFS network, we need to start the daemon using `ipfs
-daemon`. I have mine start automatically via a Systemd user service I adapted
+Before we can access the IPFS network, we need to start the daemon using `ipfs daemon`. I have mine start automatically via a Systemd user service I adapted
 from the [ArchLinux IPFS Wiki entry][archipfs]:
 
 `$HOME/.config/systemd/user/ipfs.service`
+
 ```
 [Unit]
 Description=IPFS daemon
@@ -96,7 +93,6 @@ $ ipfs daemon
 ```
 
 [archipfs]: https://wiki.archlinux.org/index.php/IPFS#Using_a_service_to_start_the_daemon "IPFS - ArchWiki"
-
 
 ## Content Identifiers
 
@@ -148,7 +144,6 @@ SHA256(hello.txt)= a948904f2f0f479b8f8197694b30184b0d2ed1c1cd2a1ec0fb85d299a192a
 
 Huh. That doesn't match. So what is the content that the hash is of?
 
-
 ## Objects
 
 When we added the file `hello.txt`, it's content wasn't simply added as raw
@@ -197,8 +192,8 @@ Going back to our question earlier about what content is actually hashed, it's
 the entire raw block.
 
 ```
-$ ipfs block get QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o | 
-  openssl sha256     
+$ ipfs block get QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o |
+  openssl sha256
 (stdin)= 46d44814b9c5af141c3aaab7c05dc5e844ead5f91f12858b021eba45768b4c0e
 ```
 
@@ -207,7 +202,7 @@ $ ipfs block get QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o |
 We looked at a very simple object containing a small file, but objects can
 link to other objects using their CID to form larger sets of data.
 
-I'm going to add this Debian installer disk image: 
+I'm going to add this Debian installer disk image:
 
 ```
 $ ipfs add --quiet ~/Downloads/debian-9.6.0-amd64-netinst.iso
@@ -262,7 +257,6 @@ $ ipfs object get Qma2qJEp4wWtksnvAY3msyT1w2JFRPKjEdr3WkLsNGHJbF | jq .
 We can see the file was split up into multiple blocks and each part get it's
 own CID. The `Data` field just contains some information about the total size
 of the file.
-
 
 ## UnixFS
 

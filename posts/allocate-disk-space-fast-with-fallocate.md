@@ -5,7 +5,6 @@ tags:
 date: 2019-08-05 20:53:30
 ---
 
-
 The `fallocate` command allows you to instantly allocate disk space without
 having to write to any of the data blocks. It's a near-instant operation and
 much easier on your solid-state drive.

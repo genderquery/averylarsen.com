@@ -1,13 +1,13 @@
 module.exports = function (eleventyConfig) {
-    eleventyConfig.ignores.add("README.md");
-    
-    eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.ignores.add("README.md");
 
-    // Copy _redirects to site folder so Netlify can see it
-    eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("css");
 
-    // pretty print objects for debugging
-    eleventyConfig.addFilter("pretty", function (value) {
-        return JSON.stringify(value, null, 4);
-    });
-}
+  // Copy _redirects to site folder so Netlify can see it
+  eleventyConfig.addPassthroughCopy("_redirects");
+
+  // pretty print objects for debugging
+  eleventyConfig.addFilter("pretty", function (value) {
+    return JSON.stringify(value, null, 4);
+  });
+};

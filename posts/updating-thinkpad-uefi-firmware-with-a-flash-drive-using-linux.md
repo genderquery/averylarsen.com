@@ -8,13 +8,11 @@ tags:
 date: 2019-08-05 20:53:05
 ---
 
-
 Lenovo offers two options for updating the UEFI firmware: using a Windows-only
 program or booting from a CD. In this article, I'll show you how to make a
 bootable flash drive from the firmware update CD image using `geteltorito`.
 
 <!-- more -->
-
 
 ## Download the ISO Image
 
@@ -22,7 +20,6 @@ Head over to [Lenovo's support site][support] and put your model or serial
 number in to get access to the your laptop's downloads page. Scroll down to
 the _BIOS/UEFI_ section and download the _BIOS Update (Bootable CD)_ file.
 It'll be named something like "jbuj72wd.iso".
-
 
 ## Extract the Boot Image
 
@@ -46,7 +43,6 @@ El Torito image starts at sector 27 and has 43008 sector(s) of 512 Bytes
 
 Image has been written to file "efi-update.img".
 ```
-
 
 ## Write to the Flash Drive
 
@@ -79,11 +75,9 @@ removing the flash drive.
 $ sync
 ```
 
-
 ## Restart and Update
 
 Restart your laptop, boot from the flash drive (using F12 on the T450s, at
 least), and follow the on-screen instructions.
-
 
 [support]: https://support.lenovo.com/

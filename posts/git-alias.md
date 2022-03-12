@@ -4,7 +4,6 @@ tags: git
 date: 2019-08-05 20:36:11
 ---
 
-
 I use both [GitHub] and [GitLab] and their respective private email
 address features. This means, however, that I have two different commit
 email addresses that can't be set globally.
