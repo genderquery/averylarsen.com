@@ -20,3 +20,8 @@ footer {
   padding-top: 1em;
   border-top: 1px solid;
 }
+
+.post-list {
+  list-style: disc;
+  padding-left: 20px;
+}

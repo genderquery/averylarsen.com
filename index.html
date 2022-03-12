@@ -11,10 +11,9 @@ layout: page
 
 <h2>Read something I wrote recently</h2>
 
-<ol>
+<ol reversed class="post-list">
   {%- for post in collections.posts reversed -%}
   <li>
-    <time>{{ post.date }}</time>
     <a href="{{ post.url }}">{{ post.data.title }}</a>
   </li>
   {%- endfor -%}
