@@ -15,3 +15,8 @@ pre {
   padding: 0.25em 0.5em;
   background-color: #eef;
 }
+
+footer {
+  padding-top: 1em;
+  border-top: 1px solid;
+}
