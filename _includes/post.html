@@ -3,4 +3,6 @@ layout: page
 ---
 
 <h1>{{ title }}</h1>
+
+<time datetime="{{ date | isoDate }}">{{ page.date | localeDate }}</time>
 {{ content }}
