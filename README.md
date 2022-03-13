@@ -10,3 +10,5 @@ Personal website of Avery Larsen (that's me!).
 - Add resumé
 - Test with old browsers
 - Dead link checker
+- Dark mode
+- id attributes for headings

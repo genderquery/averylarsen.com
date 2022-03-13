@@ -9,6 +9,10 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  color: #009;
+}
+
 pre {
   overflow-x: auto;
   border: 1px solid;
@@ -24,4 +28,19 @@ footer {
 .post-list {
   list-style: disc;
   padding-left: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #112;
+    color: #eed;
+  }
+
+  a {
+    color: #aaf;
+  }
+
+  pre {
+    background-color: #223;
+  }
 }
