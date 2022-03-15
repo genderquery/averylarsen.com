@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const { URL } = require("url");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
@@ -21,5 +22,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("isoDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISODate();
+  });
+
+  eleventyConfig.addFilter("rfc2822Date", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toRFC2822();
+  });
+
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => {
+    return new URL(url, base).toString();
   });
 };
