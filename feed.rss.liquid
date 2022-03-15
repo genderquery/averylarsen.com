@@ -1,0 +1,21 @@
+---
+permalink: feed.rss
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="{{ '/feed.rss' | url | absoluteUrl: metadata.baseUrl }}" rel="self" type="application/rss+xml"/>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.baseUrl }}</link>
+    <description>{{ metadata.description }}</description>
+    {% for post in collections.posts reversed -%}
+    <item>
+      <title>{{ post.data.title | strip_html }}</title>
+      <pubDate>{{ post.date | rfc2822Date }}</pubDate>
+      <guid isPermaLink="true" >{{ post.url | url | absoluteUrl: metadata.baseUrl }}</guid>
+      <description><![CDATA[{{ post.templateContent }}]]></description>
+    </item>
+    {% endfor -%}
+  </channel>
+</rss>
