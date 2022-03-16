@@ -9,3 +9,6 @@ Personal website of Avery Larsen (that's me!).
 - **`development`**: The latest development changes live here. Gets merged into `staging`.
 - **`features/*`**: New features. Gets merged into `development` then deleted.
 - **`fixes/*`**: Bug fixes. Gets merged into `development` then deleted.
+- **`drafts`**: An [orphan branch] to hold drafts of posts.
+
+[orphan branch]: https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt---orphanltnew-branchgt
