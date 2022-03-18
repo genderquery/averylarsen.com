@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<h1>{{ title }}</h1>
+<h1>{{ title | escape }}</h1>
 
 <time datetime="{{ page.date | isoDate }}">{{ page.date | localeDate }}</time>
 {{ content }}
