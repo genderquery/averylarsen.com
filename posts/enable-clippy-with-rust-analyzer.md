@@ -11,3 +11,5 @@ By default, the VS Code extension [rust-analyzer](https://github.com/rust-lang/r
 ```json
 "rust-analyzer.checkOnSave.command": "clippy"
 ```
+
+Credit goes to 17cupsofcoffee for the [solution](https://users.rust-lang.org/t/how-to-use-clippy-in-vs-code-with-rust-analyzer/41881/2).
