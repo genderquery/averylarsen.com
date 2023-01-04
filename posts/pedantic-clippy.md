@@ -10,7 +10,6 @@ Turn on all warning for [Clippy](https://github.com/rust-lang/rust-clippy) by ad
 ```rust
 #![deny(clippy::all)]
 #![warn(clippy::pedantic)]
-#![warn(clippy::restriction)]
 #![warn(clippy::nursery)]
 #![warn(clippy::cargo)]
 ```
