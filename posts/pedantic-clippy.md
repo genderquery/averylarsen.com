@@ -15,4 +15,4 @@ Turn on all warning for [Clippy](https://github.com/rust-lang/rust-clippy) by ad
 #![warn(clippy::cargo)]
 ```
 
-From https://zhauniarovich.com/post/2021/2021-09-pedantic-clippy/#paranoid-clippy.
+From ["Pedantic Clippy" by Yury Zhauniarovich](https://zhauniarovich.com/post/2021/2021-09-pedantic-clippy/#paranoid-clippy).
