@@ -194,7 +194,7 @@ daddy, I just pwned a buFFer :)
 
 [buffer overflow]: https://en.wikipedia.org/wiki/Buffer_overflow
 [netcat]: https://en.wikipedia.org/wiki/Netcat
-[gets]: https://linux.die.net/man/3/gets
+[`gets`]: https://linux.die.net/man/3/gets
 [GDB]: https://en.wikipedia.org/wiki/GNU_Debugger
 [little endian]: https://en.wikipedia.org/wiki/Endianness
 [pwntools]: https://docs.pwntools.com/en/latest/
