@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
 ```
 
 This program passes `0xdeadbeef` to `func()` as `key`. A buffer is created with
-a length of 32. `[gets]` is used to read a string from *stdin* into
+a length of 32. [`gets`] is used to read a string from *stdin* into
 `overflowme`. Finally, `key` is compared to `0xcafebabe` and if they are equal,
 we are given a shell.
 
