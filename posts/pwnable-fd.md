@@ -3,7 +3,7 @@ title: Pwnable CTF - fd
 tags:
   - pwnable
   - ctf
-date: 2024-01-04
+date: 2024-01-03
 ---
 
 In this first challenge, we have to SSH into a shell:
