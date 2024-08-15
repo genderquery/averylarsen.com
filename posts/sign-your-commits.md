@@ -16,7 +16,7 @@ git config --global commit.gpgsign true
 
 To get GPG to ask for the password on the command line instead of a curses window:
 
-Edit (or create) `$HOME/.gnupg/gpg-gpg.conf`:
+Edit (or create) `$HOME/.gnupg/gpg.conf`:
 ```
 use-agent
 pinentry-mode loopback
