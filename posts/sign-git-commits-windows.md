@@ -36,3 +36,8 @@ Configure Git to use our `gpg.exe` instead of the one bundled with Git.
 ```powershell
 git config --global gpg.program $(Get-Command gpg | Select-Object -Expand Source)
 ```
+
+Configure git to sign your commits by default. This is optional, but if you don't enable this option, you'll have to run `git commit -S` to sign each time.
+```powershell
+git config --global commit.gpgsign true
+```
