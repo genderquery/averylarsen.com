@@ -1,9 +1,10 @@
-const { DateTime } = require("luxon");
-const { URL } = require("url");
-const md = require("markdown-it");
-const anchor = require("markdown-it-anchor");
+import { DateTime } from "luxon";
+import { URL } from "url";
+import md from "markdown-it";
+import anchor from "markdown-it-anchor";
 
-module.exports = function (eleventyConfig) {
+
+export default async function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
 
   eleventyConfig.addPassthroughCopy("css");
