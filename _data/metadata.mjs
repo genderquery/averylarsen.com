@@ -1,6 +1,6 @@
-module.exports = function () {
+export default function () {
   return {
-    title: "AveryLarsen.com",
+    title: "averylarsen.com",
     description: "Personal website of Avery Larsen",
     baseUrl: () => {
       if (process.env.BASE_URL) {
@@ -12,4 +12,4 @@ module.exports = function () {
       return "https://averylarsen.com";
     },
   };
-};
+}
