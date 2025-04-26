@@ -3,7 +3,6 @@ import { URL } from "url";
 import md from "markdown-it";
 import anchor from "markdown-it-anchor";
 
-
 export default async function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
 
@@ -19,7 +18,7 @@ export default async function (eleventyConfig) {
       html: true,
     }).use(anchor, {
       permalink: anchor.permalink.headerLink({ safariReaderFix: true }),
-    })
+    }),
   );
 
   // pretty print objects for debugging
@@ -29,7 +28,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addFilter("localeDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toLocaleString(
-      DateTime.DATE_MED
+      DateTime.DATE_MED,
     );
   });
 
@@ -44,4 +43,4 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter("absoluteUrl", (url, base) => {
     return new URL(url, base).toString();
   });
-};
+}

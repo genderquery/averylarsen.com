@@ -17,18 +17,21 @@ This is reversing task. all you need is binary
 ```
 
 Let's take a look:
+
 ```sh
 $ file flag
 flag: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, no section header
 ```
 
 Running the program gives us a hint:
+
 ```sh
 $ ./flag
 I will malloc() and strcpy the flag there. take it.
 ```
 
 If we run [`strings`] against the binary, we'll see a lot of garbage, but we can also see that it is packed by [UPX].
+
 ```sh
 $ strings -n60 flag
 ...
@@ -58,6 +61,7 @@ Catchpoint 2 (syscall 'exit_group' [231])
 ```
 
 Let now run the program:
+
 ```
 (gdb) run
 Starting program: /home/avery/src/pwnable/flag
@@ -96,7 +100,6 @@ Now we can run `strings` on it and get our flag:
 (gdb) shell strings flag.heap
 UPX...? sounds like a delivery service :)
 ```
-
 
 [`strings`]: https://linux.die.net/man/1/strings
 [UPX]: https://en.wikipedia.org/wiki/UPX

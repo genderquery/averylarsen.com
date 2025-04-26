@@ -18,6 +18,7 @@ ssh fd@pwnable.kr -p2222 (pw:guest)
 ```
 
 Let's look around:
+
 ```sh
 $ ls -l
 total 16
@@ -33,18 +34,21 @@ the [sticky bit] set, which means when it runs, it will run as the owner,
 for us.
 
 When we run `fd`, we can see it wants an argument:
+
 ```sh
 $ ./fd
 pass argv[1] a number
 ```
 
 Passing a number gives a hint:
+
 ```sh
 $ ./fd 1234
 learn about Linux file IO
 ```
 
 Let's take a look at `fd.c`:
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>

