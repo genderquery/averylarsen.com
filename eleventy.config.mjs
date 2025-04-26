@@ -6,8 +6,10 @@ import anchor from "markdown-it-anchor";
 export default async function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
 
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("averylarsen@mailbox.org.asc");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // Copy _redirects to site folder so Netlify can see it
   eleventyConfig.addPassthroughCopy("_redirects");
