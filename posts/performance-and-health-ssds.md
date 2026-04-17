@@ -29,7 +29,7 @@ swap device that is "50% of available RAM or 4GiB, whichever is less". See
 `zram-generator.conf(5)` if you want to configure it further.
 
 It is recommend to increase `vm.swappiness` to take better advantage of zram.
-See [https://wiki.archlinux.org/title/Zram#Optimizing_swap_on_zram].
+See https://wiki.archlinux.org/title/Zram#Optimizing_swap_on_zram.
 
 ## File systems
 
@@ -63,7 +63,7 @@ minimizing the number of impacted cells.
 Regardless of file system, try to keep the drive from filling up. Its
 performance degrades as less free space is available.
 
-[Solid-state drives]: https://wiki.archlinux.org/title/Solid_state_drive
+[Solid state drives]: https://wiki.archlinux.org/title/Solid_state_drive
 [zram]: https://wiki.archlinux.org/title/Zram
 [systemd-zram-generator]: https://packages.debian.org/systemd-zram-generator
 [Btrfs]: https://wiki.archlinux.org/title/Btrfs
